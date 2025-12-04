@@ -1,0 +1,19 @@
+<div id="game">
+  <header><img src="/assets/images/header.png" alt="Header"></header>
+  <div id="hud">
+      <div id="time">{{ time() }}</div>
+      <div id="score">{{ score() }}</div>
+  </div>
+  <div id="lawn">
+      @for (hole of holes; track $index) {
+        <div #holeRef class="hole" (click)="whack(holeRef)">
+        </div>
+      }
+  </div>
+
+  @if (!gameRunning()) {
+    <div>
+        <div (click)="startGame()" class="hole start"></div>
+    </div>
+  }
+</div>
