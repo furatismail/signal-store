@@ -41,9 +41,7 @@ const initialState: GameState = {
 // signalStore vytváří reaktivní úložiště stavu pomocí Angular signálů
 // Signály automaticky notifikují všechny komponenty, které je sledují
 export const GameStore = signalStore(
-  // Konfigurace: 'root' znamená, že store je globální singleton
-  // (stejná instance pro celou aplikaci, dostupná všude přes inject())
-  { providedIn: 'root' },
+  // Store není v root - bude poskytnut přes providers v komponentě
 
   // ========================================================================
   // 1. ZÁKLADNÍ STAV (withState)
